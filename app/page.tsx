@@ -1,60 +1,56 @@
 import Image from "next/image"
 
+const contactEmail = "xpaolomarzullo@gmail.com"
+
 const featuredWork = [
   {
-    title: "Quiet shoreline",
-    category: "Editorial landscape",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
-    alt: "Wide shoreline landscape beneath a soft evening sky",
-    replaceWith: "A wide landscape or travel image with strong atmosphere.",
+    title: "Capone policromo",
+    category: "Pesci in legno di mare e resina",
+    image: "/images/legnidimare/fish-capone.jpg",
+    alt: "Scultura di pesce giallo e blu realizzata in legno di mare e resina",
   },
   {
-    title: "Window light portrait",
-    category: "Portrait session",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
-    alt: "Natural light portrait of a woman framed closely",
-    replaceWith: "A portrait that shows your approach to natural light.",
+    title: "Cernia",
+    category: "Legno spiaggiato, rivetti e pittura acrilica",
+    image: "/images/legnidimare/fish-cernia.jpg",
+    alt: "Scultura chiara di cernia con dettagli anatomici in legno e resina",
   },
   {
-    title: "Studio stillness",
-    category: "Still life",
-    image:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
-    alt: "Camera and creative objects arranged in quiet studio light",
-    replaceWith:
-      "A detail-led frame from product, interiors, or personal work.",
+    title: "Resinato",
+    category: "Forme marine assemblate a mano",
+    image: "/images/legnidimare/fish-resinato.jpg",
+    alt: "Pesce rosso in legno di mare con texture a listelli e dettaglio metallico",
   },
   {
-    title: "Evening gathering",
-    category: "Events",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-    alt: "Candid wedding gathering with guests in warm light",
-    replaceWith: "A candid event or documentary image with a clear moment.",
+    title: "Riccio",
+    category: "Cromie ispirate all'illustrazione scientifica",
+    image: "/images/legnidimare/fish-riccio.jpg",
+    alt: "Pesce colorato con puntinature bianche e occhio nero lucido",
   },
 ]
 
-const packages = [
+const collections = [
   {
-    name: "Portrait session",
-    price: "From €280",
+    name: "Pesci",
     details:
-      "For individuals, artists, and small teams who need thoughtful portraits.",
+      "Forme anatomiche frammentate e unite da rivetti, così che il legno mosso dal mare mantenga un senso di motilità.",
   },
   {
-    name: "Editorial story",
-    price: "From €520",
+    name: "Conchiglie e induttori di sogno",
     details:
-      "Half-day coverage for spaces, makers, travel notes, or brand narratives.",
+      "Oggetti più intimi, spesso costruiti con accostamenti di legni, metalli e superfici lucide.",
   },
   {
-    name: "Events",
-    price: "From €750",
+    name: "Fuori catalogo",
     details:
-      "Documentary coverage for gatherings, launches, and intimate celebrations.",
+      "Lampade, galline, coralli, piccola gioielleria, fermacarte e altre variazioni nate dalla stessa ricerca del bello.",
   },
+]
+
+const processSteps = [
+  "Legni spiaggiati scelti tra tavole segnate dalla permanenza in acqua di mare.",
+  "Disegno preparatorio, taglio delle parti, prova cromatica e assemblaggio con rivetti.",
+  "Colori acrilici, dettagli a pennello o pennarello, lucidatura e sigillo finale in ceralacca.",
 ]
 
 export default function Page() {
@@ -64,10 +60,10 @@ export default function Page() {
         <div className="flex flex-col justify-between gap-14 md:sticky md:top-8 md:h-[calc(100svh-4rem)]">
           <nav className="flex items-center justify-between text-xs tracking-[0.28em] text-muted-foreground uppercase">
             <a href="#top" className="text-foreground">
-              Photographer Name
+              Legni di Mare
             </a>
             <a
-              href="mailto:hello@example.com"
+              href={`mailto:${contactEmail}`}
               className="border-b border-foreground/40 pb-1 text-foreground"
             >
               Email
@@ -76,15 +72,16 @@ export default function Page() {
 
           <div id="top" className="space-y-8">
             <p className="text-sm tracking-[0.34em] text-muted-foreground uppercase">
-              Photography portfolio
+              Paolo Marzullo · Resin creations
             </p>
             <h1 className="font-heading text-6xl leading-[0.92] tracking-[-0.05em] md:text-7xl lg:text-8xl">
-              Quiet images for people, places, and the moments between.
+              Oggetti d&apos;arte nati dal legno portato dal mare.
             </h1>
             <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-              I am a photographer drawn to natural light, calm compositions, and
-              honest gestures. I shoot portraits, editorial stories, intimate
-              events, and details that give a place its character.
+              Legni di Mare è un portfolio di pesci, conchiglie e piccole
+              sculture in legno spiaggiato, resina e materiali recuperati: opere
+              costruite per gioco e per passione, tra osservazione scientifica e
+              fantasia cromatica.
             </p>
           </div>
 
@@ -93,19 +90,19 @@ export default function Page() {
               href="#work"
               className="border-t border-border pt-3 text-foreground"
             >
-              My work
+              Opere
             </a>
             <a
-              href="#pricing"
+              href="#process"
               className="border-t border-border pt-3 text-foreground"
             >
-              Pricing
+              Processo
             </a>
             <a
               href="#contact"
               className="border-t border-border pt-3 text-foreground"
             >
-              Contact
+              Contatti
             </a>
           </div>
         </div>
@@ -113,12 +110,12 @@ export default function Page() {
         <div className="space-y-24">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-muted">
             <Image
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1600&q=80"
-              alt="Quiet interior with a desk and warm natural light"
+              src="/images/legnidimare/hero-pesce-home.jpg"
+              alt="Pesce policromo in legno di mare e resina, frammentato in sezioni verticali"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 57vw"
-              className="object-cover object-center grayscale-[15%]"
+              className="object-contain object-center p-8"
             />
           </div>
 
@@ -126,16 +123,16 @@ export default function Page() {
             <div className="flex flex-col justify-between gap-4 border-t border-border pt-6 sm:flex-row">
               <div>
                 <p className="text-sm tracking-[0.32em] text-muted-foreground uppercase">
-                  My work
+                  Opere selezionate
                 </p>
                 <h2 className="mt-3 font-heading text-4xl tracking-[-0.03em]">
-                  Selected photographs
+                  Pesci, conchiglie e oggetti unici
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-6 text-muted-foreground">
-                Replace these placeholders with a balanced edit: one hero image,
-                two portraits or people-led frames, one atmosphere-led image,
-                and one detail.
+                Le immagini e i testi sono tratti dal sito originale Legni di
+                Mare e adattati in una struttura più essenziale per il
+                portfolio.
               </p>
             </div>
 
@@ -160,7 +157,7 @@ export default function Page() {
                           ? "(max-width: 640px) 100vw, 57vw"
                           : "(max-width: 640px) 100vw, 28vw"
                       }
-                      className="h-full w-full object-cover object-center transition duration-700 hover:scale-[1.03]"
+                      className="h-full w-full object-contain object-center p-6 transition duration-700 hover:scale-[1.03]"
                     />
                   </div>
                   <div className="mt-4 flex items-start justify-between gap-4">
@@ -178,38 +175,76 @@ export default function Page() {
             </div>
           </section>
 
-          <section id="pricing" className="scroll-mt-10 space-y-8">
+          <section id="process" className="scroll-mt-10 space-y-8">
             <div className="border-t border-border pt-6">
               <p className="text-sm tracking-[0.32em] text-muted-foreground uppercase">
-                Pricing
+                Processo
               </p>
               <h2 className="mt-3 font-heading text-4xl tracking-[-0.03em]">
-                Simple starting points
+                Dalla deriva alla forma
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground">
-                Pricing sits after the work so visitors can first understand the
-                visual direction, then quickly see the kinds of sessions
-                available before getting in touch.
+                Il lavoro parte da tavole e frammenti provati dal mare. Le forme
+                sono disegnate, separate in parti, verniciate e ricomposte con
+                rivetti, conservando il movimento naturale del materiale.
               </p>
             </div>
 
             <div className="grid gap-4">
-              {packages.map((item) => (
+              {processSteps.map((step, index) => (
                 <article
-                  key={item.name}
-                  className="grid gap-4 rounded-[1.5rem] border border-border p-5 sm:grid-cols-[1fr_auto] sm:items-center"
+                  key={step}
+                  className="grid gap-4 rounded-[1.5rem] border border-border p-5 sm:grid-cols-[auto_1fr] sm:items-center"
                 >
-                  <div>
-                    <h3 className="font-heading text-2xl tracking-[-0.02em]">
-                      {item.name}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                      {item.details}
-                    </p>
-                  </div>
-                  <p className="text-lg text-foreground">{item.price}</p>
+                  <p className="font-heading text-4xl text-muted-foreground">
+                    0{index + 1}
+                  </p>
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    {step}
+                  </p>
                 </article>
               ))}
+            </div>
+          </section>
+
+          <section className="scroll-mt-10 space-y-6">
+            <div className="grid gap-6 sm:grid-cols-3">
+              {collections.map((item) => (
+                <article
+                  key={item.name}
+                  className="rounded-[1.5rem] border border-border p-5"
+                >
+                  <h3 className="font-heading text-2xl tracking-[-0.02em]">
+                    {item.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {item.details}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <div className="grid gap-6 sm:grid-cols-3">
+              <Image
+                src="/images/legnidimare/shell-teak.jpg"
+                alt="Conchiglia in legno e resina montata su una base blu"
+                width={900}
+                height={1089}
+                className="aspect-square rounded-[1.5rem] bg-muted object-cover"
+              />
+              <Image
+                src="/images/legnidimare/outside-granceola.jpg"
+                alt="Granceola decorativa su base cilindrica in resina"
+                width={760}
+                height={692}
+                className="aspect-square rounded-[1.5rem] bg-muted object-cover"
+              />
+              <Image
+                src="/images/legnidimare/vetrina-earrings.jpg"
+                alt="Piccoli gioielli colorati disposti intorno a una cornice"
+                width={900}
+                height={837}
+                className="aspect-square rounded-[1.5rem] bg-muted object-cover"
+              />
             </div>
           </section>
 
@@ -218,31 +253,24 @@ export default function Page() {
             className="rounded-[2rem] bg-foreground p-8 text-background md:p-10"
           >
             <p className="text-sm tracking-[0.32em] text-background/65 uppercase">
-              Contact
+              Contatti
             </p>
             <h2 className="mt-4 font-heading text-4xl tracking-[-0.03em] md:text-5xl">
-              Tell me what you are making, marking, or remembering.
+              Per informazioni sulle opere e sui progetti Legni di Mare.
             </h2>
             <a
-              href="mailto:hello@example.com"
+              href={`mailto:${contactEmail}`}
               className="mt-8 inline-flex rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground"
             >
-              hello@example.com
+              {contactEmail}
             </a>
           </section>
 
           <section className="pb-10 text-xs leading-6 text-muted-foreground">
-            <h2 className="mb-3 text-sm tracking-[0.32em] text-foreground uppercase">
-              Placeholder replacement list
-            </h2>
-            <ul className="grid gap-2 sm:grid-cols-2">
-              <li>Hero: replace with a signature image that sets the tone.</li>
-              {featuredWork.map((item) => (
-                <li key={item.title}>
-                  {item.title}: {item.replaceWith}
-                </li>
-              ))}
-            </ul>
+            <p>
+              Immagini e contenuti di partenza: www.legnidimare.it. Portfolio
+              adattato dal template Next.js generico.
+            </p>
           </section>
         </div>
       </section>

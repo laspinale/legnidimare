@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Geist_Mono, Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import type { Metadata } from "next"
 
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
@@ -17,6 +18,12 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const metadata: Metadata = {
+  title: "Legni di Mare | Paolo Marzullo",
+  description:
+    "Portfolio di oggetti d'arte in legno di mare, resina e materiali recuperati realizzati da Paolo Marzullo.",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,14 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="it"
       suppressHydrationWarning
       className={cn(
         "antialiased",
         fontMono.variable,
         "font-sans",
         sans.variable,
-        heading.variable,
+        heading.variable
       )}
     >
       <body>

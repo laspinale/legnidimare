@@ -1,6 +1,18 @@
-# Next.js template
+# Legni di Mare portfolio
 
-This is a Next.js template with shadcn/ui.
+Portfolio site for Paolo Marzullo's Legni di Mare resin and sea-wood creations.
+It is adapted from the generic Next.js portfolio template with shadcn/ui.
+
+Source content and imagery are based on https://www.legnidimare.it.
+
+## Development
+
+```bash
+pnpm install
+pnpm lint
+pnpm typecheck
+pnpm build
+```
 
 ## Adding components
 

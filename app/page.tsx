@@ -128,9 +128,23 @@ export default function Page() {
             <p className="text-sm tracking-[0.34em] text-muted-foreground uppercase">
               Paolo Marzullo · Per gioco e per passione
             </p>
-            <h1 className="font-heading text-6xl leading-[0.92] tracking-[-0.05em] md:text-7xl lg:text-8xl">
+            <h1 className="font-heading text-5xl leading-[0.95] tracking-[-0.05em] md:text-6xl lg:text-7xl">
               Oggetti d&apos;arte nati dal legno portato dal mare.
             </h1>
+            <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="group border-t border-border pt-3 text-foreground"
+                >
+                  <span>{item.label}</span>
+                  <span className="mt-1 block text-[0.65rem] tracking-[0.24em] text-muted-foreground uppercase transition group-hover:text-foreground">
+                    {item.status}
+                  </span>
+                </a>
+              ))}
+            </div>
             <p className="max-w-xl text-lg leading-8 text-muted-foreground">
               Legni di Mare identifica un volume di oggetti d&apos;arte basato
               principalmente su legno spiaggiato. I pesci esaltano forme vicine
@@ -139,20 +153,6 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group border-t border-border pt-3 text-foreground"
-              >
-                <span>{item.label}</span>
-                <span className="mt-1 block text-[0.65rem] tracking-[0.24em] text-muted-foreground uppercase transition group-hover:text-foreground">
-                  {item.status}
-                </span>
-              </a>
-            ))}
-          </div>
         </div>
 
         <div className="space-y-24">

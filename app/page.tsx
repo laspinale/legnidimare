@@ -111,7 +111,7 @@ export default function Page() {
   return (
     <main className="min-h-svh bg-background text-foreground">
       <section className="mx-auto grid min-h-svh max-w-7xl gap-12 px-6 py-8 md:grid-cols-[0.86fr_1.14fr] md:px-10 lg:px-16">
-        <div className="flex flex-col justify-between gap-14 md:sticky md:top-8 md:h-[calc(100svh-4rem)]">
+        <div className="flex flex-col gap-10 md:sticky md:top-8 md:max-h-[calc(100svh-4rem)] md:overflow-y-auto md:pr-2">
           <nav className="flex items-center justify-between text-xs tracking-[0.28em] text-muted-foreground uppercase">
             <a href="#top" className="text-foreground">
               Legni di Mare

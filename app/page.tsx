@@ -2,15 +2,13 @@ import Image from "next/image"
 
 const contactEmail = "xpaolomarzullo@gmail.com"
 
-const originalSite = "https://www.legnidimare.it"
-
 const navItems = [
-  { label: "Home", href: "#top", status: "attiva" },
-  { label: "My World", href: "#my-world", status: "attiva" },
-  { label: "Pesci", href: "#pesci", status: "galleria" },
-  { label: "Conchiglie", href: "#conchiglie", status: "galleria" },
-  { label: "Fuori Catalogo", href: "#fuori-catalogo", status: "galleria" },
-  { label: "Vetrina", href: "#vetrina", status: "in sviluppo" },
+  { label: "Home", href: "/", status: "attiva" },
+  { label: "My World", href: "/my-world", status: "attiva" },
+  { label: "Pesci", href: "/pesci", status: "galleria" },
+  { label: "Conchiglie", href: "/conchiglie", status: "galleria" },
+  { label: "Fuori Catalogo", href: "/fuori-catalogo", status: "galleria" },
+  { label: "Vetrina", href: "/vetrina", status: "in sviluppo" },
 ]
 
 const featuredWork = [
@@ -59,8 +57,7 @@ const gallerySections = [
       "Scorpione grigio",
       "Pesce San Pietro",
     ],
-    originalHref:
-      "https://www.legnidimare.it/index.php?option=com_phocagallery&view=category&id=2&Itemid=109",
+    href: "/pesci",
   },
   {
     id: "conchiglie",
@@ -76,8 +73,7 @@ const gallerySections = [
       "Conchiglia di Mussolo",
       "Balene coda dorata",
     ],
-    originalHref:
-      "https://www.legnidimare.it/index.php?option=com_phocagallery&view=category&id=4&Itemid=152",
+    href: "/conchiglie",
   },
   {
     id: "fuori-catalogo",
@@ -93,8 +89,7 @@ const gallerySections = [
       "Granceola",
       "Lampade e gioielleria",
     ],
-    originalHref:
-      "https://www.legnidimare.it/index.php?option=com_phocagallery&view=category&id=5&Itemid=153",
+    href: "/fuori-catalogo",
   },
 ]
 
@@ -302,10 +297,10 @@ export default function Page() {
                     </h2>
                   </div>
                   <a
-                    href={section.originalHref}
+                    href={section.href}
                     className="h-fit rounded-full border border-border px-4 py-2 text-xs tracking-[0.22em] text-foreground uppercase"
                   >
-                    Sito originale
+                    Apri pagina
                   </a>
                 </div>
                 <p className="mt-5 max-w-3xl text-sm leading-6 text-muted-foreground">
@@ -392,9 +387,9 @@ export default function Page() {
 
           <section className="pb-10 text-xs leading-6 text-muted-foreground">
             <p>
-              Immagini e contenuti di partenza: {originalSite}. Sono stati
-              considerati Home, My World, Pesci, Conchiglie, Fuori Catalogo,
-              Vetrina e i link di accesso riservato del sito Joomla originale.
+              Immagini e contenuti riprendono il sito Legni di Mare originale e
+              sono ora organizzati in pagine interne: Home, My World, Pesci,
+              Conchiglie, Fuori Catalogo e Vetrina.
             </p>
           </section>
         </div>
